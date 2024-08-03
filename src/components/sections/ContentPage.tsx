@@ -9,7 +9,7 @@ import { avatarNameFallback, formatDate } from "@/lib/utils"
 import { Content } from "@/actions/contentActions"
 import { ContentStatus, ContentType } from "@prisma/client"
 
-import CommentList from "../CommentList"
+import CommentList from "./CommentList"
 import ChapterTable from "./ChapterTable"
 import { Card } from "@/components/ui/Card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/Avatar"

@@ -1,6 +1,6 @@
 import { createClient, RedisClientType } from "redis";
 
-import { REDIS_URL, REDIS_NAMESPACE } from "@/config";
+import { REDIS_URL, REDIS_NAMESPACE, REDIS_PASS } from "@/config";
 
 declare global {
   var redis: RedisClient;
@@ -8,7 +8,7 @@ declare global {
 
 const redisClient =
   global.redis ||
-  createClient({ url: REDIS_URL });
+  createClient({ url: REDIS_URL, password: REDIS_PASS, username: 'default' });
 if (process.env.NODE_ENV !== "production") globalThis.redis = redisClient;
 
 export interface RedisClient extends Omit<RedisClientType, "json"> {
